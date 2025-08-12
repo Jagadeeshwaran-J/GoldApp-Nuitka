@@ -1,5 +1,5 @@
 
-# 🪙 GoldApp-Nvitika – Python to EXE using Nuitka
+# 🪙 GoldApp-Nuitka – Python to EXE using Nuitka
 
 This repository demonstrates how to **convert a Python-based gold detection project into a secure `.exe` file** using **Nuitka** — a compiler that converts Python into C++ binaries for maximum performance and code protection.
 
