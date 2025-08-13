@@ -1,7 +1,7 @@
 
-# 🪙 GoldApp-Nuitka – Python to EXE using Nuitka
+# Python to EXE using Nuitka
 
-This repository demonstrates how to **convert a Python-based gold detection project into a secure `.exe` file** using **Nuitka** — a compiler that converts Python into C++ binaries for maximum performance and code protection.
+This repository demonstrates how to **convert a Python-based detection project into a secure `.exe` file** using **Nuitka** — a compiler that converts Python into C++ binaries for maximum performance and code protection.
 
 ---
 
@@ -14,19 +14,6 @@ Convert a complex Python script (with deep learning and database interaction) in
 - 🧩 All dependencies included
 - 👨‍💻 Code is compiled, not visible or editable
 - 🚀 Ready-to-run portable application
-
----
-
-## 📁 Final Client Folder Structure
-
-```
-GoldApp_Nvitika/
-├── Gold_detector.exe              # Compiled executable (Nuitka)
-├── config.yaml                    # Runtime settings
-├── data.yaml                      # I/O schema and labels
-├── Model_encrypt.pt               # AES-encrypted ML model
-├── instantclient_23_8/           # Oracle DB driver
-```
 
 ---
 
@@ -73,14 +60,10 @@ Nuitka compiles to C++, so you must install the Microsoft C++ Build Tools before
 ### ✅ Example Command
 
 ```bash
-python -m nuitka Gold_detector.py ^
+python -m nuitka detector.py ^
   --standalone ^
   --enable-plugin=torch ^
   --enable-plugin=numpy ^
-  --include-data-files=config.yaml=config.yaml ^
-  --include-data-files=data.yaml=data.yaml ^
-  --include-data-files=Model_encrypt.pt=Model_encrypt.pt ^
-  --include-data-dir=instantclient_23_8=instantclient_23_8 ^
   --output-dir=dist
 ```
 
@@ -88,7 +71,7 @@ python -m nuitka Gold_detector.py ^
 
 After build, the executable will be found here:
 ```
-dist/Gold_detector.dist/Gold_detector.exe
+dist/detector.dist/detector.exe
 ```
 
 ---
@@ -165,9 +148,9 @@ dist/Gold_detector.dist/Gold_detector.exe
 
 ## ⚙️ Nuitka Workflow – Step-by-Step
 
-### GoldApp-Nvitika Build Process
+### App-Nvitika Build Process
 #### 🪛 Step 1: Input Python Script
-- You start with your main file: `Gold_detector.py`
+- You start with your main file: `detector.py`
 - This contains logic for inference, database, and decryption.
 
 #### 🧠 Step 2: Nuitka Compilation to C Code
@@ -203,7 +186,7 @@ dist/Gold_detector.dist/Gold_detector.exe
 
 | File / Folder         | Purpose                                  |
 |-----------------------|------------------------------------------|
-| `Gold_detector.exe`   | Final secure executable                  |
+| `detector.exe`   | Final secure executable                  |
 | `config.yaml`         | Runtime settings                         |
 | `data.yaml`           | Schema for detection I/O                 |
 | `Model_encrypt.pt`    | AES-encrypted model                      |
@@ -218,5 +201,5 @@ dist/Gold_detector.dist/Gold_detector.exe
 
 ## 📌 Summary
 
-**GoldApp-Nvitika** is a robust, production-ready toolchain that transforms a Python ML app into a **secure, tamper-resistant `.exe`**. It safeguards intellectual property, eliminates Python dependency, and delivers everything needed in a clean, client-ready folder.
+**App-Nvitika** is a robust, production-ready toolchain that transforms a Python ML app into a **secure, tamper-resistant `.exe`**. It safeguards intellectual property, eliminates Python dependency, and delivers everything needed in a clean, client-ready folder.
 
